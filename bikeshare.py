@@ -9,7 +9,6 @@ CITY_DATA = { 'chicago': 'chicago.csv',
 CITIES = ['chicago', 'new york', 'washington']
 MONTHS = ['January', 'February', 'March', 'April', 'May', 'June']
 CITY_VAL = '0'
-#print("CITY_VAL--------------------->>>>>>>>>>>>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<<<<<<<<<<<<",CITY_VAL)
 
 
 def get_filters():
@@ -56,8 +55,6 @@ def get_filters():
        day = 'Thursday'
     if day == 7:
        day = 'Friday'
-    # to check that if statement works correctly        
-    #print("day is ============",day)
     print('-'*40)
     return city, month, day
 
@@ -87,7 +84,6 @@ def load_data(city, month, day):
     # filter by month if applicable
     if month != 'all':
         # use the index of the months list to get the corresponding int
-        #months = ['january', 'february', 'march', 'april', 'may', 'june']
         months = ['January', 'February', 'March', 'April', 'May', 'June']
         month = months.index(month) + 1
 
@@ -209,8 +205,6 @@ def display_data(df):
     view_data = input('\nWould you like to view 5 rows of individual trip data? Enter yes or no\n')
     start_loc = 0
     while (view_data != 'no'):
-        #print(df.iloc[0:start_loc]) 
-        #print(df.iloc[start_loc, start_loc+5]) 
         print(df.head(start_loc))
         start_loc += 5
         view_data = input("Do you wish to continue?: ").lower()
